@@ -1,0 +1,16 @@
+.dockerignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.idea/
+.vscode/
+data/
+*.egg-info/
+.pytest_cache/
+htmlcov/
+.DS_Store
+whisper.cpp/build/ 
