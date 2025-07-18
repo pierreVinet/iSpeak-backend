@@ -1,0 +1,103 @@
+[
+  {
+    "id": "test-1",
+    "name": "Intelligibility Assessment (FDA2)",
+    "type": "intelligibility",
+    "timeRange": { "start": 3.032265741084695, "end": 7.733098068350666 },
+    "referenceData": {
+      "words": [],
+      "sentences": [
+        "ask not",
+        " your countri can do for",
+        "ask what you can do for your country"
+      ]
+    },
+    "createdAt": "2025-07-09T09:32:09.941Z",
+    "updatedAt": "2025-07-09T09:32:09.941Z"
+  },
+  {
+    "id": "test-2",
+    "name": "Intelligibility Assessment (FDA2) - words",
+    "type": "intelligibility",
+    "timeRange": { "start": 3.032265741084695, "end": 7.733098068350666 },
+    "referenceData": {
+      "words": ["ask", "not", " your", "countri", "can", " do", " for"],
+      "sentences": []
+    },
+    "createdAt": "2025-07-09T09:32:09.941Z",
+    "updatedAt": "2025-07-09T09:32:09.941Z"
+  },
+
+  {
+    "id": "12543d41-7d6a-47e2-8720-7c878387ddd6",
+    "name": "Intelligibility Assessment (FDA2)",
+    "type": "intelligibility",
+    "timeRange": { "start": 0.275665713028169, "end": 2.441290713028166 },
+    "referenceData": {
+      "words": ["and", "so", "myy", "fellow", "america"],
+      "sentences": []
+    },
+    "createdAt": "2025-07-11T12:26:36.088Z",
+    "updatedAt": "2025-07-11T12:26:36.088Z"
+  },
+  {
+    "id": "aff57a73-24b8-4de3-a6f8-d165f70079da",
+    "name": "Intelligibility Assessment (FDA2) 2",
+    "type": "intelligibility",
+    "timeRange": { "start": 2.911647227112676, "end": 7.844459727112681 },
+    "referenceData": {
+      "words": [],
+      "sentences": ["ask nott", "whatt your", "country", "can do", "for youuu"]
+    },
+    "createdAt": "2025-07-11T12:27:18.432Z",
+    "updatedAt": "2025-07-11T12:27:18.432Z"
+  },
+  {
+    "id": "aff57a73-24b8-4de3-a6f8-d165f70079da",
+    "name": "Intelligibility Assessment (FDA2) 2",
+    "type": "intelligibility",
+    "timeRange": { "start": 2.911647227112676, "end": 7.844459727112681 },
+    "referenceData": {
+      "words": [],
+      "sentences": [" not", "what oleeele ele", "country can ", "for "]
+    },
+    "createdAt": "2025-07-11T12:27:18.432Z",
+    "updatedAt": "2025-07-11T12:27:18.432Z"
+  },
+  {
+    "id": "aff57a73-24b8-4de3-a6f8-d165f70079da",
+    "name": "Intelligibility Assessment (FDA2) 2",
+    "type": "intelligibility",
+    "timeRange": { "start": 2.911647227112676, "end": 7.844459727112681 },
+    "referenceData": {
+      "words": [],
+      "sentences": ["ask nott", "whatt your", "country", "can do", "for youuu"]
+    },
+    "createdAt": "2025-07-11T12:27:18.432Z",
+    "updatedAt": "2025-07-11T12:27:18.432Z"
+  },
+  {
+    "id": "12543d41-7d6a-47e2-8720-7c878387ddd6",
+    "name": "Intelligibility Assessment (FDA2)",
+    "type": "intelligibility",
+    "timeRange": { "start": 0.275665713028169, "end": 2.441290713028166 },
+    "referenceData": {
+      "words": ["and", "so", "myy", "fellow", "america"],
+      "sentences": []
+    },
+    "createdAt": "2025-07-11T12:26:36.088Z",
+    "updatedAt": "2025-07-11T12:26:36.088Z"
+  },
+  {
+    "id": "aff57a73-24b8-4de3-a6f8-d165f70079da",
+    "name": "Intelligibility Assessment (FDA2) 2",
+    "type": "intelligibility",
+    "timeRange": { "start": 2.911647227112676, "end": 7.844459727112681 },
+    "referenceData": {
+      "words": [],
+      "sentences": ["ask", "whatt your", "country", "can ", "for youuu"]
+    },
+    "createdAt": "2025-07-11T12:27:18.432Z",
+    "updatedAt": "2025-07-11T12:27:18.432Z"
+  }
+]

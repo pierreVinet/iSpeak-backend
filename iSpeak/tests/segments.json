@@ -1,0 +1,51 @@
+[
+  {
+    "id": "12543d41-7d6a-47e2-8720-7c878387ddd6",
+    "name": "Intelligibility Assessment (FDA2)",
+    "type": "intelligibility",
+    "timeRange": { "start": 0.275665713028169, "end": 2.441290713028166 },
+    "referenceData": {
+      "words": [
+        "stand",
+        "slide",
+        "calendar",
+        "bureaucracy",
+        "gaze",
+        "Huge",
+        "plate",
+        "community",
+        "snake",
+        "quote",
+        "hope"
+      ],
+      "sentences": []
+    },
+    "transcription": "Stand Slide Calendar cancy Pays Hues Plate Community Snake Wold Cop",
+    "createdAt": "2025-07-11T12:26:36.088Z",
+    "updatedAt": "2025-07-11T12:26:36.088Z"
+  },
+  {
+    "id": "aff57a73-24b8-4de3-a6f8-d165f70079da",
+    "name": "Intelligibility Assessment (FDA2) 2",
+    "type": "intelligibility",
+    "timeRange": { "start": 2.911647227112676, "end": 7.844459727112681 },
+    "referenceData": {
+      "words": [],
+      "sentences": [
+        "You have to pay.",
+        "I can't breathe.",
+        "Who are they.",
+        "My daughter is a nurse.",
+        "You can choose.",
+        "Can I have soup.",
+        "I want a choice.",
+        "It's trying to shine.",
+        "Look at my thumb.",
+        "It's late"
+      ]
+    },
+    "transcription": "You have to pay. I cannot in. Who are they. My daughter is an aruss. You can choose. Can I have soup. I wan a choice. It's time to shine. Look at my tongue. It's late",
+    "createdAt": "2025-07-11T12:27:18.432Z",
+    "updatedAt": "2025-07-11T12:27:18.432Z"
+  }
+]

@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.DS_Store
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Documentation builds
+docs/build/
+
+# Experiment runs
+experiments/**/results/
+experiments/**/logs/
+
+# Application secrets
+.env
+.secrets
+others/
+
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+
+# whisper.cpp
+/whisper.cpp
+
+# backend
+/whisper.cpp/
+/data/
