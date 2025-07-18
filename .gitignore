@@ -63,8 +63,7 @@ others/
 *.toc
 
 
-# whisper.cpp
-/whisper.cpp
+
 
 # backend
 /data/
