@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     cmake \
     git \
     ffmpeg \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install poetry
@@ -21,12 +22,13 @@ COPY pyproject.toml poetry.lock /app/
 # Install project dependencies
 RUN poetry config virtualenvs.create false && poetry install --only=main --no-interaction --no-ansi --no-root
 
-# Copy the whisper.cpp directory
-COPY whisper.cpp/ /app/whisper.cpp
-
-# Build whisper.cpp
+# Clone and build whisper.cpp
+RUN git clone https://github.com/ggml-org/whisper.cpp.git /app/whisper.cpp
 WORKDIR /app/whisper.cpp
-RUN rm -rf build && cmake -B build -DGGML_NATIVE=OFF -DGGML_CPU_ARM_FMA=OFF && cmake --build build --config Release
+RUN cmake -B build -DGGML_NATIVE=OFF -DGGML_CPU_ARM_FMA=OFF && cmake --build build --config Release
+
+# Download the large-v3 model
+RUN ./models/download-ggml-model.sh large-v3
 
 # Return to the main app directory
 WORKDIR /app
