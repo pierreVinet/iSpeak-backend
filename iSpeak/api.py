@@ -16,11 +16,9 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:3001", 
         "https://ispeaktele.netlify.app/",
-        "http://therapy-science.ch/",
-        "http://ispeak.therapy-science.ch/"
+        "https://therapy-science.ch/",
+        "https://ispeak.therapy-science.ch/"
 
     ],
     allow_credentials=True,
