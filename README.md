@@ -10,7 +10,7 @@ postgresql v17
 ## Run backend server locally
 
 ```
-poetry run uvicorn iSpeak.api:app --reload
+poetry run uvicorn iSpeak.api:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ## Download Whisper.cpp

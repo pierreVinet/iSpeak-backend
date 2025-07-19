@@ -18,8 +18,10 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:3001", 
-        "http://127.0.0.1:3000",
-        "http://127.0.0.1:3001",
+        "https://ispeaktele.netlify.app/",
+        "http://therapy-science.ch/",
+        "http://ispeak.therapy-science.ch/"
+
     ],
     allow_credentials=True,
     allow_methods=["*"],
