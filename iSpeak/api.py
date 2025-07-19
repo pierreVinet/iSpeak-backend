@@ -81,15 +81,6 @@ async def analyze_audio(metadata: str = Form(None), upload: UploadFile = File(..
 async def get_status_stream(job_id: str):
     """Server-Sent Events endpoint for real-time status updates"""
     
-    # Check if job exists with a timeout
-    timeout_seconds = 5  # Wait up to 5 seconds for job to be created
-    elapsed = 0
-    check_interval = 0.1
-    
-    while job_id not in processing_status and elapsed < timeout_seconds:
-        await asyncio.sleep(check_interval)
-        elapsed += check_interval
-    
     # If job still doesn't exist after timeout, return 404
     if job_id not in processing_status:
         raise HTTPException(status_code=404, detail=f"Job ID '{job_id}' not found")
