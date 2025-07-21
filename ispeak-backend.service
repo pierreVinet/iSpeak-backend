@@ -6,10 +6,9 @@ After=network.target
 
 [Service]
 Type=exec
-User=your-username  # Replace with your actual username
-Group=your-username  # Replace with your actual username
-WorkingDirectory=/path/to/your/iSpeak-backend  # Replace with actual path
-Environment="PATH=/path/to/your/iSpeak-backend/.venv/bin"  # If using virtual env
+User=pierre  # Replace with your actual username
+Group=pierre  # Replace with your actual username
+WorkingDirectory=/home/ubuntu/iSpeak/Github/iSpeak-backend  # Replace with actual path
 ExecStart=/usr/local/bin/poetry run uvicorn iSpeak.api:app --host 127.0.0.1 --port 8000
 Restart=always
 RestartSec=5
