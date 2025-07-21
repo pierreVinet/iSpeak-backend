@@ -1,0 +1,25 @@
+# Save this as /etc/systemd/system/ispeak-backend.service
+
+[Unit]
+Description=iSpeak FastAPI Backend
+After=network.target
+
+[Service]
+Type=exec
+User=your-username  # Replace with your actual username
+Group=your-username  # Replace with your actual username
+WorkingDirectory=/path/to/your/iSpeak-backend  # Replace with actual path
+Environment="PATH=/path/to/your/iSpeak-backend/.venv/bin"  # If using virtual env
+ExecStart=/usr/local/bin/poetry run uvicorn iSpeak.api:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=5
+
+# Security settings
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/path/to/your/iSpeak-backend/data
+
+[Install]
+WantedBy=multi-user.target 
