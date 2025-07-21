@@ -11,6 +11,8 @@ postgresql v17
 
 ```
 poetry run uvicorn iSpeak.api:app --reload --host 0.0.0.0 --port 8000
+
+poetry run uvicorn iSpeak.api:app --reload --host 0.0.0.0 --port 8000 --ssl-keyfile ./key.pem --ssl-certfile ./cert.pem
 ```
 
 ## Download Whisper.cpp
