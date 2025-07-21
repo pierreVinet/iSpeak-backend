@@ -68,3 +68,7 @@ others/
 
 # backend
 /data/
+
+# SSL certificates
+key.pem
+cert.pem
