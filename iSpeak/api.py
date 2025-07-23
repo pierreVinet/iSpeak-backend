@@ -18,7 +18,8 @@ app.add_middleware(
     allow_origins=[
         "https://ispeaktele.netlify.app",
         "https://therapy-science.ch",
-        "https://ispeak.therapy-science.ch"
+        "https://ispeak.therapy-science.ch",
+        "https://api.therapy-science.ch"
     ],
     allow_credentials=True,
     allow_methods=["*"],
