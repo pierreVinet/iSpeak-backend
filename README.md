@@ -12,7 +12,7 @@ postgresql v17
 ### Development (HTTP only)
 
 ```
-poetry run uvicorn iSpeak.api:app --reload --host 0.0.0.0 --port 8000
+poetry run uvicorn iSpeak.api:app --reload --port 8000
 ```
 
 ### Production with Nginx reverse proxy (recommended)

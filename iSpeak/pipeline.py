@@ -268,7 +268,7 @@ async def trim_audio(input_file: Path, start_time: float, end_time: float,
         Path to the trimmed audio file
     """
     if status_callback:
-        status_callback("trimming", f"Trimming audio from {start_time}s to {end_time}s...")
+        status_callback("converting", f"Trimming audio from {start_time}s to {end_time}s...")
     
     # Ensure output directory exists
     output_file.parent.mkdir(parents=True, exist_ok=True)

@@ -19,7 +19,9 @@ app.add_middleware(
         "https://ispeaktele.netlify.app",
         "https://therapy-science.ch",
         "https://ispeak.therapy-science.ch",
-        "https://api.therapy-science.ch"
+        "https://api.therapy-science.ch",
+        "http://localhost:3000",
+        "http://localhost:3001",
     ],
     allow_credentials=True,
     allow_methods=["*"],
