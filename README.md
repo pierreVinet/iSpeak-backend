@@ -15,17 +15,13 @@ postgresql v17
 poetry run uvicorn iSpeak.api:app --reload --port 8000
 ```
 
-### Production with Nginx reverse proxy (recommended)
+### Production with Nginx reverse proxy
 
 ```
 # The app runs on HTTP locally, Nginx handles HTTPS
-poetry run uvicorn iSpeak.api:app --host 127.0.0.1 --port 8000
-```
-
-### Direct HTTPS (alternative, if not using Nginx)
-
-```
-poetry run uvicorn iSpeak.api:app --reload --host 0.0.0.0 --port 8000 --ssl-keyfile ./key.pem --ssl-certfile ./cert.pem
+poetry run uvicorn iSpeak.api:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ## Download Whisper.cpp
+
+Follow this repo [Whisper.cpp](https://github.com/ggml-org/whisper.cpp/blob/master/README.md)
