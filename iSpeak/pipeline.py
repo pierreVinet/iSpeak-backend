@@ -818,16 +818,15 @@ def calculate_intelligibility_scores(segment_results: Dict[str, Any]) -> Dict[st
            
             if intelligibility_type == "sentences":
                 for alignment in alignments:
-                    wer = min(alignment['wer'], 1.0)  # Cap at 1.0
-                    total_sentences_wer += wer
-                    total_wer += wer
+                    calculated_wer = min(alignment.get("wer", 0), 1.0)  # Cap at 1.0
+                    total_sentences_wer += calculated_wer
+                    total_wer += calculated_wer
                     nb_sentences += 1
-                nb_sentences += 1
             elif intelligibility_type == "words":
                 for alignment in alignments[0]:
-                    wer = min(alignment.get("wer", 0), 1.0)  # Cap at 1.0
-                    total_words_wer += wer
-                    total_wer += wer
+                    calculated_wer = min(alignment.get("wer", 0), 1.0)  # Cap at 1.0
+                    total_words_wer += calculated_wer
+                    total_wer += calculated_wer
                     nb_words += 1
             
     results = {
