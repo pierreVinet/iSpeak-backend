@@ -837,6 +837,71 @@ def calculate_intelligibility_scores(segment_results: Dict[str, Any]) -> Dict[st
     
     return results
 
+def calculate_binary_intelligibility_scores(segment_results: Dict[str, Any]) -> Dict[str, float]:
+    """Calculate binary intelligibility scores from segment results.
+    
+    In this binary approach, any word or sentence with WER > 0 is considered 
+    completely incorrect (scored as 1.0), while WER = 0 is considered correct (scored as 0.0).
+    
+    Parameters
+    ----------
+    segment_results : Dict[str, Any]
+        Dictionary containing results from all processed segments
+        
+    Returns
+    -------
+    Dict[str, float]
+        Dictionary containing binary intelligibility scores:
+        - sentences_wer: Mean binary WER for sentence-based segments (0.0 or 1.0 per sentence)
+        - words_wer: Mean binary WER for word-based segments (0.0 or 1.0 per word)  
+        - total_wer: Mean of sentences and words binary scores
+        
+    Note: Binary approach means any error results in 1.0, no error results in 0.0
+    """
+    total_wer = 0
+    total_sentences_wer = 0
+    total_words_wer = 0
+    nb_sentences = 0
+    nb_words = 0
+
+    if len(segment_results) == 0:
+        return {
+            "total_wer": None, 
+            "sentences_wer": None,
+            "words_wer": None,
+        }
+    
+    # Separate segments by intelligibility type
+    for segment_id, segment_data in segment_results.items():
+        if segment_data.get("segment_type") == "intelligibility":
+            intelligibility_type = segment_data.get("intelligibility_type")
+            alignments = segment_data.get("metrics", {}).get("alignments_fda2", [[]])
+           
+            if intelligibility_type == "sentences":
+                for alignment in alignments:
+                    original_wer = alignment.get("wer", 0)
+                    # Binary: if WER > 0, then it's an error (1.0), otherwise correct (0.0)
+                    binary_wer = 1.0 if original_wer > 0 else 0.0
+                    total_sentences_wer += binary_wer
+                    total_wer += binary_wer
+                    nb_sentences += 1
+            elif intelligibility_type == "words":
+                for alignment in alignments[0]:
+                    original_wer = alignment.get("wer", 0)
+                    # Binary: if WER > 0, then it's an error (1.0), otherwise correct (0.0)
+                    binary_wer = 1.0 if original_wer > 0 else 0.0
+                    total_words_wer += binary_wer
+                    total_wer += binary_wer
+                    nb_words += 1
+            
+    results = {
+        "total_wer": total_wer / (nb_sentences + nb_words) if (nb_sentences + nb_words) > 0 else None,
+        "sentences_wer": total_sentences_wer / nb_sentences if nb_sentences > 0 else None,
+        "words_wer": total_words_wer / nb_words if nb_words > 0 else None,
+    }
+    
+    return results
+
 async def run_full_pipeline(audio_path: Path, segments: Optional[List[AnalysisSegment]] = None, status_callback=None, job_id: str = None, metadata: Optional[Dict[str, Any]] = None) -> dict:
     """Run the complete audio analysis pipeline based on segment types"""
     try:
@@ -951,7 +1016,7 @@ async def run_full_pipeline(audio_path: Path, segments: Optional[List[AnalysisSe
         if status_callback:
             status_callback("calculating_scores", "Calculating intelligibility scores...")
         
-        intelligibility_scores = calculate_intelligibility_scores(intelligibility_segment_results)
+        intelligibility_scores = calculate_binary_intelligibility_scores(intelligibility_segment_results)
         final_result["intelligibility_scores"] = intelligibility_scores
         
         # Step 6: Add segment results to final result
